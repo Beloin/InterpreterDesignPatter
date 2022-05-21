@@ -4,6 +4,7 @@
 
 #include "VariableStore.h"
 
+VariableStore *VariableStore::_instance = nullptr;
 VariableStore *VariableStore::getInstance() {
     if (VariableStore::_instance == nullptr) {
         _instance = new VariableStore(200);

@@ -17,7 +17,7 @@ extern const string TYPES[];
 extern const int EXPRESSION_ARRAY_SIZE;
 extern const int TYPE_ARRAY_SIZE;
 
-class ActionExpression : Expression {
+class ActionExpression : public Expression {
 public:
     /**
      * Interpret single word command.

@@ -7,5 +7,5 @@
 
 void NewInstanceContext::compile() {
     auto varStore = VariableStore::getInstance();
-    varStore.setVariableValue(this->identifier, this->value);
+    varStore->setVariableValue(this->identifier, this->value);
 }

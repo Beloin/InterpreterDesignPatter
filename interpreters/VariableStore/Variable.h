@@ -20,8 +20,8 @@ public:
     string value;
 
     Variable(const string &name, const string &value);
-
     Variable(const string &name, VarType type, const string &value);
+    Variable();
 };
 
 

@@ -6,6 +6,8 @@
 #define INTERPRETER_SHOWACTION_H
 
 
+#include "Context.h"
+
 class ShowAction : Context {
 public:
     void compile() override;

@@ -9,7 +9,6 @@ using namespace std;
 
 bool isQuotedString(const string& str);
 string getStringValue(const string& str);
-
 bool isNumberString(const string& str);
 
 #endif //INTERPRETER_UTILS_H

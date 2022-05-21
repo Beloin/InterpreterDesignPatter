@@ -3,7 +3,8 @@
 //
 
 #include "NoopContext.h"
+#include "../../utils/DefaultException.h"
 
 void NoopContext::compile() {
-    throw "Syntax Error";
+    throw(DefaultException("Syntax Error"));
 }

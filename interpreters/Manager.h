@@ -13,6 +13,7 @@ private:
     VoidExpression *expression = new VoidExpression();
 
 public:
+    Manager();
     void interpret(string code);
 };
 

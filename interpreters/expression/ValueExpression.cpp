@@ -4,10 +4,11 @@
 
 #include "ValueExpression.h"
 #include "../../utils/ExpressionUtils.h"
+#include "../../utils/utils.h"
 
 void ValueExpression::interpret(string key, Context *ctx) {
     if (isValue(key)) {
-        ctx->setValue(key);
+        ctx->setValue(getStringValue(key));
         return;
     }
 

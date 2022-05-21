@@ -15,6 +15,7 @@ private:
     explicit VariableStore(long MAX_SIZE) {
         this->store = (Variable **) new Variable[MAX_SIZE];
     }
+
     static VariableStore *_instance;
 
 public:

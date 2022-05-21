@@ -9,7 +9,7 @@
 #include <Context.h>
 #include "Expression.h"
 
-class ValueExpression : Expression{
+class ValueExpression : public Expression{
 public:
     void interpret(string key, Context *ctx) override;
 };
