@@ -1,4 +1,4 @@
-# Interpreter Pattern
+# Expression Pattern
 
 Precisamos de uma gramática
 
@@ -62,7 +62,7 @@ Has all interpreters, manage the Key String and the Context pointer
 (Could be a Wrapper in context, but we are using C++).
 
 InterpreterManager:
- - private interpreters: Interpreter*
+ - private interpreters: Expression*
  - interpret(String code)
 
 ## VariableStore
@@ -75,21 +75,21 @@ VariableStore:
  
 ## Interpreters:
 
-Interpreter:
+Expression:
  - interpret(String key, Context ctx) 
  - next(String key, Context ctx)
- - setSuccessor(Interpreter *)
+ - setSuccessor(Expression *)
 
-VoidInterpreter : Interpreter:
+VoidInterpreter : Expression:
  - Only pass to other interpreter
 
-ActionExpression : Interpreter:
+ActionExpression : Expression:
  - Create and setup Context
 
-IdentifierExpression : Interpreter:
+IdentifierExpression : Expression:
  - Adds identifier to Context
 
-ValueExpression : Interpreter:
+ValueExpression : Expression:
  - Works like Sequence Expression with a list of values
  - Adds values to Context
 

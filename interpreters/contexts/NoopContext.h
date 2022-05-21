@@ -7,6 +7,9 @@
 
 #include "Context.h"
 
+/**
+ * Use this context as placeholder to others contexts
+ */
 class NoopContext : Context  {
 public:
     void compile() override;

@@ -29,4 +29,4 @@ add_executable(interpreter
 
 
 
-        main.cpp interpreters/contexts/AddContext.cpp interpreters/contexts/AddContext.h interpreters/contexts/DeleteContext.cpp interpreters/contexts/DeleteContext.h interpreters/contexts/MinusContext.cpp interpreters/contexts/MinusContext.h interpreters/interpreters/Interpreter.h)
+        main.cpp interpreters/contexts/AddContext.cpp interpreters/contexts/AddContext.h interpreters/contexts/DeleteContext.cpp interpreters/contexts/DeleteContext.h interpreters/contexts/MinusContext.cpp interpreters/contexts/MinusContext.h interpreters/expression/Expression.h interpreters/expression/VoidExpression.cpp interpreters/expression/VoidExpression.h interpreters/expression/ActionExpression.cpp interpreters/expression/ActionExpression.h interpreters/expression/IdentifierExpression.cpp interpreters/expression/IdentifierExpression.h utils/utils.cpp utils/utils.h utils/ExpressionUtils.cpp utils/ExpressionUtils.h interpreters/expression/ValueExpression.cpp interpreters/expression/ValueExpression.h interpreters/Manager.cpp interpreters/Manager.h)
