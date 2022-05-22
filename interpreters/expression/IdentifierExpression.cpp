@@ -5,11 +5,12 @@
 #include "IdentifierExpression.h"
 #include "../../utils/ExpressionUtils.h"
 
-void IdentifierExpression::interpret(string key, Context *ctx) {
+void IdentifierExpression::interpret(string key, Context **ctx) {
     bool isId = isIdentifier(key);
     // Check for number or "words"
     if (isId) {
-        ctx->setIdentifier(key);
+        if (!(*ctx)->getIdentifier().empty()) (*ctx)->setValue(key);
+        else (*ctx)->setIdentifier(key);
         return;
     }
 

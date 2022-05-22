@@ -45,7 +45,7 @@ void Manager::interpret(string code) {
 
     for (int i = 0; i < splitedString.size(); ++i) {
         string key = splitedString.at(i);
-        this->expression->interpret(key, defaultContext);
+        this->expression->interpret(key, &defaultContext);
     }
 
     defaultContext->compile();

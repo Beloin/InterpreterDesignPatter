@@ -21,7 +21,9 @@ private:
 public:
     static VariableStore * getInstance();
 
+    bool exists(const string& key);
     string getVariableValue(const string& key);
+    Variable * getVariable(const string& key);
     void removeVariable(const string& key);
     void setVariableValue(const string& key, const string& value);
 };

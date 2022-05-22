@@ -4,6 +4,6 @@
 
 #include "VoidExpression.h"
 
-void VoidExpression::interpret(string key, Context *ctx) {
+void VoidExpression::interpret(string key, Context **ctx) {
     this->successor->interpret(key, ctx);
 }

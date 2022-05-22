@@ -7,7 +7,7 @@
 
 #include "Context.h"
 
-class NewInstanceContext : Context {
+class NewInstanceContext : public Context {
 public:
     void compile() override;
 };

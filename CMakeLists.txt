@@ -18,8 +18,8 @@ add_executable(interpreter
         interpreters/contexts/NoopContext.cpp
         interpreters/contexts/NoopContext.h
 
-        interpreters/contexts/ShowAction.cpp
-        interpreters/contexts/ShowAction.h
+        interpreters/contexts/ShowContext.cpp
+        interpreters/contexts/ShowContext.h
 
         interpreters/VariableStore/Variable.h
         interpreters/VariableStore/Variable.cpp

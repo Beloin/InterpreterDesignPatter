@@ -109,7 +109,7 @@ DefaultContext : Context:
 - compile() Raises an error, since the syntax is wrong
 
 // ACTION: SHOW  
-ShowAction : Context:
+ShowContext : Context:
  - complee() cout variable;
 
 // ACTION: NEWINSTANCE  

@@ -15,7 +15,7 @@ protected:
     Expression *successor;
 
 public:
-    virtual void interpret(string key, Context *ctx) = 0;
+    virtual void interpret(string key, Context **ctx) = 0;
 
     Expression *getSuccessor() const {
         return successor;

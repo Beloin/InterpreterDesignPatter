@@ -11,7 +11,7 @@
 
 class VoidExpression : public Expression {
 public:
-    void interpret(string key, Context *ctx) override;
+    void interpret(string key, Context **ctx) override;
 };
 
 

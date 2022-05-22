@@ -3,6 +3,7 @@
 //
 
 #include "VariableStore.h"
+#include "../../utils/DefaultException.h"
 
 VariableStore *VariableStore::_instance = nullptr;
 VariableStore *VariableStore::getInstance() {
@@ -21,7 +22,7 @@ string VariableStore::getVariableValue(const string& key) {
         }
     }
 
-    throw "Undefined Identifier";
+    throw (DefaultException("Undefined Reference"));
 }
 
 void VariableStore::removeVariable(const string& key) {
@@ -34,6 +35,33 @@ void VariableStore::removeVariable(const string& key) {
 }
 
 void VariableStore::setVariableValue(const string& key, const string& value) {
-    this->store[variableArraySize] = new Variable(key, value);
-    variableArraySize++;
+    if (exists(key)) {
+        auto var = this->getVariable(key);
+        var->value = value;
+    } else {
+        this->store[variableArraySize] = new Variable(key, value);
+        variableArraySize++;
+    }
+}
+
+Variable * VariableStore::getVariable(const string &key) {
+    for (int i = 0; i < variableArraySize; ++i) {
+        auto currentVariable = this->store[i];
+        if (currentVariable->name == key) {
+            return currentVariable;
+        }
+    }
+
+    throw (DefaultException("Undefined Reference"));
+}
+
+bool VariableStore::exists(const string &key) {
+    for (int i = 0; i < variableArraySize; ++i) {
+        auto currentVariable = this->store[i];
+        if (currentVariable->name == key) {
+            return true;
+        }
+    }
+
+    return false;
 }

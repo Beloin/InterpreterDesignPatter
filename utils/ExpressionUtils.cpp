@@ -20,9 +20,9 @@ bool isExpression(const string& key) {
     return false;
 }
 
-// isIdentifier = !isExpression || !isType || !isNumber || !isQuoted;
+// isIdentifier = !isExpression && !isType && !isNumber && !isQuoted;
 bool isIdentifier(const string &key) {
-    return !( ( isExpression(key) && isType(key) ) && ( isQuotedString(key) && isNumberString(key) ) );
+    return !(isExpression(key) || isType(key) || isQuotedString(key) || isNumberString(key));
 }
 
 // isValue = isQuoted || isNumber

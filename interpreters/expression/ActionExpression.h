@@ -26,11 +26,11 @@ public:
      * @param key
      * @param ctx
      */
-    void interpret(string key, Context *ctx) override;
+    void interpret(string key, Context **ctx) override;
 private:
     bool isType(string key);
     bool isExpression(string key);
-    void setupExpression(string key, Context *ctx);
+    void setupExpression(string key, Context **ctx);
 };
 
 

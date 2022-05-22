@@ -7,19 +7,21 @@
 #include <MinusContext.h>
 #include <ConcatContext.h>
 #include <DeleteContext.h>
+#include <ShowContext.h>
 #include "ActionExpression.h"
 
-const string EXPRESSIONS[] = {"ADD", "MINUS", "CONCAT", "DELETE"};
+const string EXPRESSIONS[] = {"ADD", "MINUS", "CONCAT", "DELETE", "SHOW"};
 const string TYPES[] = {"STRING", "INTEGER", "VAR"};
-const int EXPRESSION_ARRAY_SIZE = 4;
-const int TYPE_ARRAY_SIZE = 2;
+const int EXPRESSION_ARRAY_SIZE = 5;
+const int TYPE_ARRAY_SIZE = 3;
 
-void ActionExpression::interpret(string key, Context *ctx) {
+void ActionExpression::interpret(string key, Context **ctx) {
     if (isType(key)) {
-        *ctx = *(Context *) new NewInstanceContext();
-        ctx->setType(key);
+        *ctx = (Context *) new NewInstanceContext();
+        (*ctx)->setType(key);
         return;
     }
+
 
     if (isExpression(key)) {
         setupExpression(key, ctx);
@@ -42,18 +44,21 @@ bool ActionExpression::isExpression(string key) {
     return false;
 }
 
-void ActionExpression::setupExpression(string key, Context *ctx) {
+void ActionExpression::setupExpression(string key, Context **ctx) {
     if (key == "ADD") {
-        *ctx = *(Context *) new AddContext();
+        *ctx = (Context *) new AddContext();
     }
     if (key == "MINUS") {
-        *ctx = *(Context *) new MinusContext();
+        *ctx = (Context *) new MinusContext();
     }
     if (key == "CONCAT") {
-        *ctx = *(Context *) new ConcatContext();
+        *ctx = (Context *) new ConcatContext();
     }
     if (key == "DELETE") {
-        *ctx = *(Context *) new DeleteContext();
+        *ctx = (Context *) new DeleteContext();
     }
-    ctx->setAction(key);
+    if (key == "SHOW") {
+        *ctx = (Context *) new ShowContext();
+    }
+    (*ctx)->setAction(key);
 }

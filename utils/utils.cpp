@@ -16,7 +16,7 @@ string getStringValue(const string &str) {
 
     // Get String value without quotes
     for (int i = 1; i < stringLength-1; ++i) {
-        newString[i] = str[i];
+        newString.push_back(str[i]);
     }
 
     return newString;
